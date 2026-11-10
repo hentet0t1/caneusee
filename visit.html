@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- 宣告使用 HTML5；DOCTYPE 是文件類型宣告，不需要結束標籤。 -->
+<html lang="zh-Hant">
+<head>
+    <!-- ===== SEO 與分享資訊：每一頁都有自己的 title 與 description ===== -->
+    <meta charset="UTF-8">
+    <!-- viewport 讓手機以裝置寬度顯示，是 RWD 的第一步。 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- description 是搜尋結果下方的摘要；keywords 列出本頁主題關鍵字。 -->
+    <meta name="description" content="跟著影展短片走一趟帝國製糖廠：建議散步路線、與臺中公園及草悟道的比較表、Google 地圖與走讀小提醒。">
+    <meta name="keywords" content="帝國製糖廠交通, 星泉湖, 臺中散步路線, 帝國製糖廠地圖">
+    <meta name="author" content="紀馨喬">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph：分享到 Facebook、LINE 時顯示的標題、摘要與縮圖。 -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="半畝方糖｜帝國製糖廠影展專題">
+    <meta property="og:title" content="走讀地圖｜半畝方糖影展專題">
+    <meta property="og:description" content="跟著影展短片走一趟帝國製糖廠：建議散步路線、與臺中公園及草悟道的比較表、Google 地圖與走讀小提醒。">
+    <meta property="og:image" content="images/sugar-factory.jpg">
+    <meta property="og:image:alt" content="帝國製糖廠臺中營業所的磚造建築正面">
+    <!-- 部署到 InfinityFree 或 Vercel 後，可再加上 canonical 與 og:url，填入真實網址。 -->
+    <title>走讀地圖｜半畝方糖影展專題</title>
+    <!--
+        切割後的外部 CSS：四個檔案都放在 css 資料夾，依「基礎 → 版面 → 元件 → 響應式」順序載入，
+        後載入的規則可以覆蓋前面的規則，所以 responsive.css 放在最後。
+        相對路徑 css/xxx.css 從本 HTML 所在的資料夾出發，進入 css 子資料夾讀取檔案。
+    -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- page-layout 是整頁的 Grid 容器，切出頁首、導覽列、主要內容、側邊欄、頁尾五個區域。 -->
+    <div class="page-layout">
+        <!-- header 是網站頁首；id="top" 是頁尾「回到頁首」的目的地。 -->
+        <header class="site-header" id="top">
+            <!-- 網站名稱用 p，不用 h1；每一頁的 h1 留給該頁的主標題。 -->
+            <p class="site-title"><a href="index.html">半畝方糖</a></p>
+            <p class="site-tagline">帝國製糖廠影展專題 · 放慢步調，糖廠剛好。</p>
+        </header>
+
+        <!-- nav 是全站導覽列，五個分頁都使用相同的選單。 -->
+        <nav class="site-nav" aria-label="網站導覽">
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="story.html">糖廠故事</a></li>
+                <li><a href="film.html">影展短片</a></li>
+                <li><a href="visit.html" aria-current="page">走讀地圖</a></li>
+                <li><a href="team.html">製作團隊</a></li>
+            </ul>
+        </nav>
+
+        <!-- main 是本頁唯一的主要內容區。 -->
+        <main class="content" id="main-content">
+            <h1>走讀地圖</h1>
+            <p class="lead">一兩個小時，剛好走完一趟糖廠。</p>
+
+            <section id="route">
+                <h2>跟著短片走一趟</h2>
+                <!-- 個別樣式 2/3：.route-note 讓這段提醒有左框線與內距，其他 p 不受影響。 -->
+                <p class="route-note">以下依短片「靈感礦坑」的故事安排，是本組規劃的建議路線，並非官方指定路線。</p>
+                <ol>
+                    <li>在「帝國製糖廠」站下車，先從外面欣賞營業所的磚造立面。</li>
+                    <li>走進館內，參觀臺中糖業與地方產業的展示。</li>
+                    <li>在館內咖啡或餐廳坐一會兒，把壓力放下。</li>
+                    <li>沿星泉湖畔散步，最後在草地上停留，整理今天的靈感。</li>
+                </ol>
+            </section>
+
+            <section id="compare">
+                <h2>休閒場域比較</h2>
+                <!-- table-wrap 讓表格在手機上可以左右捲動，不會撐破版面。 -->
+                <div class="table-wrap">
+                    <table>
+                        <caption>帝國糖廠與臺中市區休閒場域比較（本組評估，非官方評鑑）</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">比較項目</th>
+                                <th scope="col">帝國糖廠</th>
+                                <th scope="col">臺中公園</th>
+                                <th scope="col">草悟道</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">湖景觀賞</th>
+                                <td>★★★★★ 星泉湖</td>
+                                <td>★★★★★ 日月湖、湖心亭</td>
+                                <td>無</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">文化主題展示</th>
+                                <td>★★★★★ 糖業及地方產業展示</td>
+                                <td>★ 公園歷史地標解說</td>
+                                <td>★★★★★ 勤美術館藝術策展</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">餐飲與購物銜接</th>
+                                <td>★★★★★ 館內餐飲，鄰近 LaLaport</td>
+                                <td>★★★ 周邊日曜天地、一中商圈</td>
+                                <td>★★★★ 勤美誠品、PARK2</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">資訊完整度</th>
+                                <td>★★★ 資訊分散於不同平台</td>
+                                <td>★★★★★ 景點與活動資訊豐富</td>
+                                <td>★★★ 活動資訊較少</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="map">
+                <h2>位置地圖</h2>
+                <p>帝國製糖廠臺中營業所位於臺中市東區<strong>樂業路 30 號</strong>，旁邊就是 LaLaport 臺中。</p>
+                <!-- Google 地圖以座標定位；網址中的 & 在 HTML 寫成 &amp;。 -->
+                <iframe
+                    class="map-frame"
+                    src="https://maps.google.com/maps?q=24.137813,120.692130&amp;z=16&amp;output=embed"
+                    width="480"
+                    height="360"
+                    title="帝國製糖廠臺中營業所位置 Google 地圖"
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+                <p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B8%9D%E5%9C%8B%E8%A3%BD%E7%B3%96%E5%BB%A0%E8%87%BA%E4%B8%AD%E7%87%9F%E6%A5%AD%E6%89%80" target="_blank" rel="noopener noreferrer">在 Google 地圖開啟（另開分頁）</a></p>
+            </section>
+
+            <section id="tips" class="tips">
+                <h2>走讀小提醒</h2>
+                <!-- details 與 summary 提供瀏覽器原生的收折功能，不需要 JavaScript。 -->
+                <details open>
+                    <summary>出發前可以先注意這三件事</summary>
+                    <ul>
+                        <li>館舍展覽、店家與活動依當期公告為準，出發前先查開放時間。</li>
+                        <li>湖畔散步請留意安全，愛護歷史建築與綠地環境。</li>
+                        <li>可以和朋友順遊 LaLaport，安排成輕鬆的微旅行。</li>
+                    </ul>
+                </details>
+            </section>
+        </main>
+
+        <!-- aside 是側邊欄：放本頁目錄與參觀資訊；電腦版在右側，手機版移到主要內容下方。 -->
+        <aside class="sidebar" aria-label="側邊欄">
+            <section class="side-box">
+                <h2>本頁目錄</h2>
+                <ul>
+                    <li><a href="#route">建議路線</a></li>
+                    <li><a href="#compare">場域比較</a></li>
+                    <li><a href="#map">位置地圖</a></li>
+                    <li><a href="#tips">走讀小提醒</a></li>
+                </ul>
+            </section>
+            <section class="side-box">
+                <h2>參觀資訊</h2>
+                <!-- dl 是描述清單：dt 是項目名稱，dd 是內容。 -->
+                <dl>
+                    <dt>地址</dt>
+                    <dd>臺中市東區樂業路 30 號</dd>
+                    <dt>交通</dt>
+                    <dd>公車「帝國製糖廠」站下車，步行即達</dd>
+                    <dt>建議停留</dt>
+                    <dd>1～2 小時，可順遊 LaLaport</dd>
+                </dl>
+            </section>
+            <section class="side-box side-slogan">
+                <h2>影展標語</h2>
+                <p>放慢步調，<br>糖廠剛好。</p>
+            </section>
+        </aside>
+
+        <!-- footer 是全站頁尾。 -->
+        <footer class="site-footer">
+            <p><strong>半畝方糖｜帝國製糖廠影展專題</strong></p>
+            <p><small>作者：紀馨喬 · 更新日期：<time datetime="2026-11-10">2026 年 11 月 10 日</time></small></p>
+            <!-- 個別樣式 3/3：.report-disclaimer 權重高於 small，只讓這則聲明變成斜體。 -->
+            <p><small class="report-disclaimer">本網站為行銷系課堂專題，場館展覽與營業資訊請以官方最新公告為準。</small></p>
+            <p><a href="#top">回到頁首</a></p>
+        </footer>
+    </div>
+</body>
+</html>

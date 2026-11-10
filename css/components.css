@@ -1,0 +1,191 @@
+/*
+    components.css：元件樣式（第 3 個載入）
+    - 負責可重複使用的區塊：首頁大圖、卡片、數字區、時間軸、表格、影片、地圖、提醒區、側邊欄資訊。
+    - 最後一段是三處「個別樣式」的類別。
+*/
+
+/* ===== 首頁大圖與引言 ===== */
+.lead {
+    margin-top: 0;
+    color: #8a4b24;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+/* 首頁封面是第一個區塊，不需要上方的分隔線。 */
+.content .hero {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.hero figure {
+    margin-bottom: 0;
+}
+
+/* ===== 卡片：用 Grid 排列，auto-fit 依寬度自動決定一列放幾張 ===== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    padding: 18px 20px;
+    background-color: #f5ecda;
+    border: 1px solid #e0cfae;
+    border-top: 4px solid #c9a063;
+    border-radius: 6px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* ===== 數字重點：三欄 Grid ===== */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 0;
+    list-style: none;
+}
+
+.stat-grid li {
+    margin: 0;
+    padding: 16px;
+    text-align: center;
+    background-color: #5a3a22;
+    color: #fbf4e6;
+    border-radius: 6px;
+}
+
+.stat-grid strong {
+    display: block;
+    color: #ecc983;
+    font-size: 1.5rem;
+}
+
+/* ===== 時間軸：有序清單加上左側金色線條 ===== */
+.timeline {
+    padding-left: 1.8em;
+    border-left: 3px solid #c9a063;
+}
+
+/* ===== 表格 ===== */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+caption {
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 10px 12px;
+    border: 1px solid #d2bb92;
+    text-align: left;
+    vertical-align: top;
+}
+
+thead {
+    background-color: #ecdcbd;
+}
+
+tbody th {
+    background-color: #f5ecda;
+}
+
+/* ===== 影片與地圖 ===== */
+iframe {
+    display: block;
+    max-width: 100%;
+    border: 0;
+    border-radius: 6px;
+}
+
+.video-frame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.map-frame {
+    width: 100%;
+    height: 360px;
+}
+
+/* ===== 走讀小提醒 ===== */
+.tips details {
+    padding: 14px 18px;
+    background-color: #f3e6cb;
+    border-left: 5px solid #c9a063;
+    border-radius: 4px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ===== 側邊欄的描述清單與標語 ===== */
+.side-box dl {
+    margin: 0;
+}
+
+.side-box dt {
+    font-weight: bold;
+}
+
+.side-box dd {
+    margin: 0 0 8px;
+}
+
+.side-slogan {
+    background-color: #5a3a22;
+    color: #fbf4e6;
+}
+
+.side-slogan h2 {
+    border-left-color: #c9a063;
+}
+
+.side-slogan p {
+    margin: 0;
+    font-family: "Noto Serif TC", "PMingLiU", "Songti TC", serif;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+/*
+    ===== 個別樣式（三處）=====
+    類別選擇器只影響加上該 class 的元素；權重高於元素選擇器，可以覆蓋 mark、p、small 的一般規則。
+*/
+
+/* 個別樣式 1/3：首頁焦點文字，金黃底配深棕字，像一塊方糖。 */
+.reading-focus {
+    background-color: #ecc983;
+    color: #3d2b1f;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* 個別樣式 2/3：走讀路線前的提醒段落，加上紅磚色左框線與內距。 */
+.route-note {
+    border-left: 4px solid #a3392b;
+    padding-left: 14px;
+}
+
+/* 個別樣式 3/3：頁尾聲明；small 預設正常字體，只有這一則改成斜體。 */
+.report-disclaimer {
+    font-style: italic;
+}

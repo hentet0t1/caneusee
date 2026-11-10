@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- 宣告使用 HTML5；DOCTYPE 是文件類型宣告，不需要結束標籤。 -->
+<html lang="zh-Hant">
+<head>
+    <!-- ===== SEO 與分享資訊：每一頁都有自己的 title 與 description ===== -->
+    <meta charset="UTF-8">
+    <!-- viewport 讓手機以裝置寬度顯示，是 RWD 的第一步。 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- description 是搜尋結果下方的摘要；keywords 列出本頁主題關鍵字。 -->
+    <meta name="description" content="影展短片「半畝方糖」的製作團隊與企劃摘要：目標客群、市場定位與資料來源。">
+    <meta name="keywords" content="半畝方糖團隊, 行銷系影展, 企劃書, 市場定位">
+    <meta name="author" content="紀馨喬">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph：分享到 Facebook、LINE 時顯示的標題、摘要與縮圖。 -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="半畝方糖｜帝國製糖廠影展專題">
+    <meta property="og:title" content="製作團隊｜半畝方糖影展專題">
+    <meta property="og:description" content="影展短片「半畝方糖」的製作團隊與企劃摘要：目標客群、市場定位與資料來源。">
+    <meta property="og:image" content="images/sugar-factory.jpg">
+    <meta property="og:image:alt" content="帝國製糖廠臺中營業所的磚造建築正面">
+    <!-- 部署到 InfinityFree 或 Vercel 後，可再加上 canonical 與 og:url，填入真實網址。 -->
+    <title>製作團隊｜半畝方糖影展專題</title>
+    <!--
+        切割後的外部 CSS：四個檔案都放在 css 資料夾，依「基礎 → 版面 → 元件 → 響應式」順序載入，
+        後載入的規則可以覆蓋前面的規則，所以 responsive.css 放在最後。
+        相對路徑 css/xxx.css 從本 HTML 所在的資料夾出發，進入 css 子資料夾讀取檔案。
+    -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- page-layout 是整頁的 Grid 容器，切出頁首、導覽列、主要內容、側邊欄、頁尾五個區域。 -->
+    <div class="page-layout">
+        <!-- header 是網站頁首；id="top" 是頁尾「回到頁首」的目的地。 -->
+        <header class="site-header" id="top">
+            <!-- 網站名稱用 p，不用 h1；每一頁的 h1 留給該頁的主標題。 -->
+            <p class="site-title"><a href="index.html">半畝方糖</a></p>
+            <p class="site-tagline">帝國製糖廠影展專題 · 放慢步調，糖廠剛好。</p>
+        </header>
+
+        <!-- nav 是全站導覽列，五個分頁都使用相同的選單。 -->
+        <nav class="site-nav" aria-label="網站導覽">
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="story.html">糖廠故事</a></li>
+                <li><a href="film.html">影展短片</a></li>
+                <li><a href="visit.html">走讀地圖</a></li>
+                <li><a href="team.html" aria-current="page">製作團隊</a></li>
+            </ul>
+        </nav>
+
+        <!-- main 是本頁唯一的主要內容區。 -->
+        <main class="content" id="main-content">
+            <h1>製作團隊</h1>
+            <p class="lead">八個人，一支短片，一座老糖廠。</p>
+
+            <section id="crew">
+                <h2>組員分工</h2>
+                <div class="table-wrap">
+                    <table>
+                        <caption>「半畝方糖」影展組員與職位</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">姓名</th>
+                                <th scope="col">職位</th>
+                                <th scope="col">主要工作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">張祐寧</th><td>組長</td><td>統籌進度與分工</td></tr>
+                            <tr><th scope="row">陳宥蓁</th><td>企劃</td><td>企劃書撰寫與市場分析</td></tr>
+                            <tr><th scope="row">陳韻茹</th><td>企劃</td><td>企劃、文案，並擔任主角</td></tr>
+                            <tr><th scope="row">黃星瑜</th><td>企劃</td><td>企劃書架構與內容整合</td></tr>
+                            <tr><th scope="row">張羿恩</th><td>導演</td><td>劇本規劃與分鏡設計</td></tr>
+                            <tr><th scope="row">林昀青</th><td>導演</td><td>劇本創作與拍攝執行</td></tr>
+                            <tr><th scope="row">紀馨喬</th><td>攝影</td><td>腳本討論與現場拍攝</td></tr>
+                            <tr><th scope="row">阮娥媚</th><td>劇務</td><td>現場支援與後勤事務</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="plan">
+                <h2>企劃摘要</h2>
+                <!-- card-grid 在這裡同樣使用 Grid 排列三張摘要卡片。 -->
+                <div class="card-grid card-grid-3">
+                    <article class="card">
+                        <h3>目標客群</h3>
+                        <p>住在臺中、生活步調緊湊，卻還沒主動造訪糖廠的 18～25 歲學生與上班族。</p>
+                    </article>
+                    <article class="card">
+                        <h3>市場定位</h3>
+                        <p>出站即達的都市慢活文化綠洲，1～2 小時就能散步、看展、放空。</p>
+                    </article>
+                    <article class="card">
+                        <h3>核心問題</h3>
+                        <p>糖廠不缺資源，而是特色還沒轉化成青年容易理解的造訪理由。</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="sources">
+                <h2>資料來源</h2>
+                <ul>
+                    <li><a href="https://travel.taichung.gov.tw/zh-tw/attractions/intro/1423" target="_blank" rel="noopener noreferrer">臺中觀光旅遊網：帝國製糖廠臺中營業所（照片來源）</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=9Pt69ocH8tw" target="_blank" rel="noopener noreferrer">YouTube：影展短片「半畝方糖」</a></li>
+                    <li>本組企劃書「半畝方糖」：個案概述、競爭者分析、市場定位與故事腳本（引用臺中市文化資產處、臺中市政府經濟發展局資料）。</li>
+                </ul>
+                <p><small>資料整理日期：2026 年 11 月 10 日。</small></p>
+            </section>
+        </main>
+
+        <!-- aside 是側邊欄：放本頁目錄與參觀資訊；電腦版在右側，手機版移到主要內容下方。 -->
+        <aside class="sidebar" aria-label="側邊欄">
+            <section class="side-box">
+                <h2>本頁目錄</h2>
+                <ul>
+                    <li><a href="#crew">組員分工</a></li>
+                    <li><a href="#plan">企劃摘要</a></li>
+                    <li><a href="#sources">資料來源</a></li>
+                </ul>
+            </section>
+            <section class="side-box">
+                <h2>參觀資訊</h2>
+                <!-- dl 是描述清單：dt 是項目名稱，dd 是內容。 -->
+                <dl>
+                    <dt>地址</dt>
+                    <dd>臺中市東區樂業路 30 號</dd>
+                    <dt>交通</dt>
+                    <dd>公車「帝國製糖廠」站下車，步行即達</dd>
+                    <dt>建議停留</dt>
+                    <dd>1～2 小時，可順遊 LaLaport</dd>
+                </dl>
+            </section>
+            <section class="side-box side-slogan">
+                <h2>影展標語</h2>
+                <p>放慢步調，<br>糖廠剛好。</p>
+            </section>
+        </aside>
+
+        <!-- footer 是全站頁尾。 -->
+        <footer class="site-footer">
+            <p><strong>半畝方糖｜帝國製糖廠影展專題</strong></p>
+            <p><small>作者：紀馨喬 · 更新日期：<time datetime="2026-11-10">2026 年 11 月 10 日</time></small></p>
+            <!-- 個別樣式 3/3：.report-disclaimer 權重高於 small，只讓這則聲明變成斜體。 -->
+            <p><small class="report-disclaimer">本網站為行銷系課堂專題，場館展覽與營業資訊請以官方最新公告為準。</small></p>
+            <p><a href="#top">回到頁首</a></p>
+        </footer>
+    </div>
+</body>
+</html>

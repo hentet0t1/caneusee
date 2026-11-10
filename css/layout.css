@@ -1,0 +1,163 @@
+/*
+    layout.css：版面配置（第 2 個載入）
+    - 用 CSS Grid 切出整頁五個區域：header、nav、main、aside（側邊欄）、footer。
+    - grid-template-areas 用「名稱」畫出版面，比較容易看出每個區塊的位置。
+*/
+
+/* 整頁 Grid 容器：電腦版為「主要內容 + 300px 側邊欄」兩欄。 */
+.page-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    grid-template-areas:
+        "header  header"
+        "nav     nav"
+        "content sidebar"
+        "footer  footer";
+    gap: 24px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* 每個區塊用 grid-area 對應到上方的區域名稱。 */
+.site-header {
+    grid-area: header;
+}
+
+.site-nav {
+    grid-area: nav;
+}
+
+.content {
+    grid-area: content;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.site-footer {
+    grid-area: footer;
+}
+
+/* ===== 頁首 ===== */
+.site-header {
+    padding: 24px 32px;
+    background-color: #5a3a22;
+    color: #fbf4e6;
+    border-top: 6px solid #c9a063;
+    border-radius: 6px;
+}
+
+.site-title {
+    margin: 0;
+    font-family: "Noto Serif TC", "PMingLiU", "Songti TC", serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+}
+
+.site-title a {
+    color: #fbf4e6;
+    text-decoration: none;
+}
+
+.site-tagline {
+    margin: 4px 0 0;
+    color: #e8d4ad;
+}
+
+/* ===== 導覽列：用 Grid 讓五個選單平均分配寬度 ===== */
+.site-nav ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-nav li {
+    margin: 0;
+}
+
+.site-nav a {
+    display: block;
+    padding: 10px 8px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #fdf8ee;
+    border: 1px solid #d2bb92;
+    border-radius: 4px;
+}
+
+.site-nav a:hover {
+    background-color: #ecdcbd;
+}
+
+/* 屬性選擇器：目前所在頁面的選單（aria-current="page"）用深色標示。 */
+.site-nav a[aria-current="page"] {
+    background-color: #a3392b;
+    border-color: #a3392b;
+    color: #fbf4e6;
+    font-weight: bold;
+}
+
+/* ===== 主要內容區 ===== */
+.content {
+    padding: 28px 32px;
+    background-color: #fdf8ee;
+    border: 1px solid #e0cfae;
+    border-radius: 6px;
+}
+
+/* 主要內容中的章節用上框線分隔。 */
+.content section {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #e0cfae;
+}
+
+.content section:first-of-type {
+    margin-top: 16px;
+}
+
+/* ===== 側邊欄 ===== */
+.sidebar {
+    display: grid;
+    gap: 16px;
+    align-content: start;
+}
+
+.side-box {
+    padding: 18px 20px;
+    background-color: #e8d9bb;
+    border: 1px solid #d2bb92;
+    border-radius: 6px;
+}
+
+.side-box h2 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.side-box ul {
+    margin: 0;
+    padding-left: 1.2em;
+}
+
+.side-box li {
+    margin: 4px 0;
+}
+
+/* ===== 頁尾 ===== */
+.site-footer {
+    padding: 20px 0;
+    border-top: 2px solid #a3392b;
+    color: #6e5641;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 6px 0;
+}

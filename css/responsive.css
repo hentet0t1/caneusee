@@ -1,0 +1,74 @@
+/*
+    responsive.css：響應式設計 RWD（最後一個載入）
+    - 用 @media 依螢幕寬度改寫版面，讓手機與平板也能看到完整資訊。
+    - 放在最後載入，相同權重時會覆蓋前面三個檔案的規則。
+*/
+
+/* 平板（900px 以下）：側邊欄移到主要內容下方，Grid 改成一欄。 */
+@media (max-width: 900px) {
+    .page-layout {
+        /* minmax(0, 1fr) 讓內容欄可以縮小，寬表格才會在 table-wrap 內捲動，而不是撐破整頁。 */
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "header"
+            "nav"
+            "content"
+            "sidebar"
+            "footer";
+        padding: 16px;
+        gap: 16px;
+    }
+
+    /* 側邊欄的三個方塊在平板上並排成兩欄。 */
+    .sidebar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 手機（600px 以下）：縮小留白與字級，選單與數字區改成較少欄位。 */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    .page-layout {
+        padding: 12px;
+    }
+
+    .site-header {
+        padding: 18px 20px;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+    }
+
+    /* 導覽列改成兩欄，按鈕仍然好點。 */
+    .site-nav ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content {
+        padding: 20px 16px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .map-frame {
+        height: 280px;
+    }
+}
