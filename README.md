@@ -8,9 +8,9 @@
 
 ## 網站連結
 
-- GitHub：（貼上本 repository 網址）
-- InfinityFree：（貼上部署後的網址）
-- Vercel：（貼上部署後的網址）
+- GitHub：(https://github.com/hentet0t1/caneusee)
+- InfinityFree：(https://ucanedoit.is-great.org/)
+- Vercel：(https://caneusee.vercel.app/)
 
 ## 我使用的 Vibe Coding 指令
 
